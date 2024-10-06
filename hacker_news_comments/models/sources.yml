@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: hacker_news_raw
+    meta:
+      external_location: "../data/hacker_news_raw.parquet"
+    tables:
+      - name: hacker_news_raw

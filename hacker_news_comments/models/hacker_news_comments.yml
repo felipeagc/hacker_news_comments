@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: hacker_news_formatted
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        data_type: int64
+        constraints:
+          - type: primary_key
+      - name: parent
+        data_type: int64
+      - name: author
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: title
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: comment_text
+        data_type: varchar
+      - name: comment_author
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: comment_ranking
+        data_type: int64
+        constraints:
+          - type: not_null
+      - name: score
+        data_type: int64
+        constraints:
+          - type: not_null
+      - name: text
+        data_type: varchar
+      - name: time_ts
+        data_type: 'timestamptz'
+  - name: hacker_news_subset
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: title
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: comment_text
+        data_type: varchar
+      - name: comment_author
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: time_ts
+        data_type: 'timestamptz'
